@@ -1,0 +1,234 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: 'Philosopher!';
+    src:local('Philosopher');
+    src:url(../fonts/Philosopher-Regular.ttf);
+}
+
+html{
+    font-family: 'Roboto';
+} /* Применяем шрифты сразу ко всему документу */
+
+@font-face {
+    font-family: 'Roboto!';
+    src: local('Roboto');
+    src: url('../fonts/Roboto-Regular.eot');
+    src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Regular.woff') format('woff'),
+    url('../fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto!';
+    src:local('Roboto');
+    src: url('../fonts/Roboto-Bold.eot');
+    src: url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Bold.woff') format('woff'),
+    url('../fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    }
+
+
+body{
+    background-color: #ffe2b0; /*заливаем фон сайта*/
+}
+
+header{
+    text-align: center; /*логотип делаем по центру*/
+    margin-bottom: 20px; /*задаем нижний отступ 20px перед тегом nav*/
+}
+
+ul{
+    list-style-type: none; /*убираем точки перед списком*/
+    text-align: center; /*текст по центру*/
+    padding: 0px;/*убираем отсуп слева который изначально был виден*/
+}
+
+li{
+    display: inline; /*сделаем блочное меню li  строчным при помощи display: inline*/
+    margin-right: 100px; /* сделаем растояние между блочно-строчными элементами */
+}
+
+a{
+    color: black; /*меняем цвет текста ссылки*/
+    text-decoration: none; /*убираем подчеркивание у списка*/
+    font-size: 18px; /*задаем размер шрифта*/
+    font-weight: 700;
+}
+
+li:last-child{
+    margin-right: 0px; /*обнуляем отступ у последнего элемнта списка li */
+}
+
+.list-1{
+    margin-bottom: 20px; /*задаем нижний отступ 20px перед тегом main*/
+}
+
+.section-about{
+    height: 640px;/*высотка контейнера*/
+    background: url(../img/01-fon.jpg) center/cover no-repeat;
+    position: relative;/*назначем родителя для позиционирования прямоуголика над фоновой картинкой*/
+    margin-bottom: 20px; /*передвигаем три иконки на 20 рх - отталкиваем от родителя*/
+}
+
+.section-about__block{
+    width: 420px;
+    height: 190px;
+    background: linear-gradient(180deg, rgba(244,213,178, 0.8)0% , rgba(234,156,65, 0.8)100% ) ; /*цвет градиент для прямоугольника*/
+    position: absolute; /*расположение прямоугольника в зависимости от родителя*/
+    top: 54%; /*растояние сверху*/
+    left: 51%;/*растояние с лева*/
+    padding-top: 15px;/*для выравнивания бордера нужно задать сверху падинг*/
+}
+
+.section-about__border{/*это ченый бордер в прямоугольнике*/
+    width: 390px;
+    height: 160px;
+    border: 1px solid black;
+    margin: 0 auto; /*расположили по центру */
+    padding: 17px 10px 0px 10px ;/*задаем падинг для родителя, чтобы у текста и заголовка появились отступы*/
+    text-align: left;
+
+
+}
+
+.section-about__title{/*заголовок*/
+    font-size: 36px;
+    margin: 0;
+    margin-bottom: 9px; 
+    font-weight: 700;
+    
+}
+
+.section-about__text{/*текст*/
+    font-size: 12px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.section-description {
+    margin-bottom: 20px;
+}
+
+
+.section-description__icon-box{/*иконки поставили по центру*/
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*
+img{
+} - Это селектор тега
+
+.section-description {
+} - Это селектор класса
+
+*{
+} - Это селектор * по нему можно обращаться ко всем тегам в стилях документа
+
+# - Это универсальный уникальный индетификатор для тега 
+
+Например:
+
+В HTML вписываем: <img id="logo" src="icons/01-Иконка.svg" alt="01-Иконка">
+
+В CSS :
+
+#logo {
+    height: 500px - Тем самым изменив данный элемент внешне от других
+}
+
+*/
+
+.section-description__icon-box img { /* Добавляя img к селектору класса мы обращаемся к элементам находящимся внутри этого дива*/
+margin-right: 76px;
+}
+
+.section-description__icon-box img:last-child { /*Добавляя img:last-child мы обращаемся к родительсткому элементу и применяем псевдо класс ко всем элентам img */
+margin-right: 0px;
+}
+
+.section-description__title{ /*загаловок выпечка*/
+font-size: 96px;
+margin: 0px; /*убираем марджины стандартные*/
+text-align: center; /*ставим по центру*/
+font-weight: 700;
+margin-bottom: 10px;
+}
+
+.section-description__span{ /*стилизуем слово это*/
+    color: #f15b40;
+}
+
+.section-description__text{
+    font-size: 18px; /*размер шрифта*/
+    width: 1000px;/*размер который должен занимать текст*/
+    margin: 0 auto; /*margin-left: auto;
+    margin-right: auto; -  центрирую текст  либо можно применить margin: 0 auto; */
+    text-align: center; /*центр*/
+    margin-bottom: 20px; /* делаем отсуп толкая следущий элемент 20рх*/
+    font-weight: 400;
+}
+
+.section-map {
+    margin-bottom: 20px;
+}
+
+.section-map__title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.section-map__map {/*Делаем элемент блочным при помощи display: block; и меняем расположение на центральное при помощи margin: 0 auto;  */
+    margin-bottom: 20px; /*оттолнем от карты на 20 рх блок который будет ниже*/
+    display: block;
+    margin: 0 auto; 
+}
+
+.line {/*стилизуем линию в теге div*/
+    border-top: 1px solid #999999;
+    width: 1024px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* .hr {
+    border: none;
+    border-top:  1px solid #999999;
+    width: 1024px;
+    margin: 0 auto;
+} стилизуем линию в непарном теге */
+
+footer{
+    height: 80px;
+}
+
+h1{
+    font-family: 'Philosopher';
+    font-weight: 400;
+}
+
+h2{
+    font-family: 'Philosopher';
+    font-weight: 400;
+}
+
+h3{
+    font-family: 'Philosopher';
+    font-weight: 400;
+}
+
+
+
+
+
+
+
